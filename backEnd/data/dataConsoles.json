@@ -1,0 +1,13 @@
+[
+    {
+        "nomeConsole": "Nitendinho",
+        "fabricação": 2000,
+        "fabricante": "Nintendo",
+        "cor": "vermelha"
+    },
+    {
+        "nomeConsole": "Sega",
+        "fabricação": 1900,
+        "fabricante": "Sega Saturno"
+    }
+]
