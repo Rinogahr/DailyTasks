@@ -1,6 +1,10 @@
+const pessoasModels = require('../models/pessoasModels')
 module.exports = {
     allGet: function( req, res ){
-        console.log('entrando no controler');
+        res.status('200').json({
+            error: false,
+            valor: pessoasModels.PessoasModelo
+        })
     },
     
     getId: function( req, res ){
