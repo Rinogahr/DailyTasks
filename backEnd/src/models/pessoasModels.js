@@ -1,15 +1,9 @@
-const dataPessoas = require('../../data/data.json');
+const pessoas = require('../../data/data.json');
 
-export class  PessoasModelo  {
-    
-    // atributos
-    nome
 
-    constructor(nome) {
-        this.nome = nome
-    }
+let pessoasAll = pessoas;
+let pessoasAllNome = pessoas;
 
-    allPessoas(dataPessoas){
-        return  dataPessoas
-    }
-}
+
+
+module.exports = {pessoasAll,pessoasAllNome};
