@@ -1,11 +1,17 @@
 const express = require('express');
-const routersPessoas = require('./src/routers/pessoaRouters');
+const usuarioRouters = require('./src/routers/Usuario-Routers');
 const app = express();
-const port = '8080';
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
-app.use(routersPessoas);
+const port = '3333';
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(usuarioRouters);
 
 
 app.listen(port, function(){
-    console.log(`Servidor icializado com sucesso na porta ${port}, acesse -> http://localhost:${port}`);
+    console.log(`Servidor icializado com sucesso! acesse -> http://localhost:${port}`);
 });
