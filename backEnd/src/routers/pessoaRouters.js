@@ -1,0 +1,14 @@
+const express = require('express');
+const routersPessoas = express.Router();
+const controllersPessoas = require('../controllers/pessoaConroller');
+
+
+routersPessoas.get('/', controllersPessoas.allGet);
+routersPessoas.get('/nome/:nome', controllersPessoas.getNome); //metodo para passar o valor por params
+routersPessoas.get('/nome', controllersPessoas.getNomeQuery);
+
+// routersPessoas.get('/nome', function( req, res ){
+//     console.log('entrando no controler passando ID');
+// });
+
+module.exports = routersPessoas;
