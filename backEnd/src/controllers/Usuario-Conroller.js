@@ -1,40 +1,54 @@
-const {querySync} = require("../../data/connection-mysql");
+const UsuarioRepository = require("../repository/Usuario-Repository");
 
 
 class UsuarioController{
 
- async  index(req,res) {
-            const sql = `SELECT id, nome,email,sexo,login, senha, fotoId FROM usuario`;
+  async index(req,res) {
 
-        const result = await  querySync(sql)
+        let resultBD = await UsuarioRepository.usuarioFindAll();
 
-                // if(error){
-                //     res.json({
-                //         status: 404,
-                //         mensage: "Erro ao tentar consultar no banco de dados",
-                //         erro: error
-                //     });
-                // }else{
-                //     res.json({
-                //         status: 200,
-                //         mensage: "Consulta realizada com sucesso !",
-                //         result: result
-                //     })
-                // }
-                console.log(result);
+        return  res.json({
+            status: 200,
+            mensage: "Consulta realizada com sucesso!",
+            resultBD: resultBD
+           })
         }
 
-    show(req,res) {
-        res.send(`Rota que irá trazer usuários pesquisando por id o id passao foi ${req.query.id}`);
-    }
+   async show(req,res) {
 
-    store(req,res) {}
-    update(req,res) {}
-    delete(req,res) {}
+        let resultBD = await UsuarioRepository.usuarioFindOneById(req.params.id);
+
+        return  res.status(200).send(resultBD);
+    }
 
     teste(req,res) {
-        res.send('entrando no controler passando ID,');
+        return  res.json({
+            mensage: (`Entrei na rota teste, rota apenas para teste`)
+           })
     }
+
+   async store(req,res) {
+
+        let resultBD =  await UsuarioRepository.createNewUsuario(req.body);
+
+        return  res.status(200).send(resultBD);
+    }
+
+    update(req,res) {
+        return  res.json({
+            mensage: (`Entrei na rota update, rota para atualizar o usuário`),
+            result: req.body
+           })
+    }
+
+    delete(req,res) {
+        return  res.json({
+            mensage: (`Entrei na rota delete, rota para deletar o usuário`),
+            result: req.body
+           })
+    }
+
+
 
 }
 

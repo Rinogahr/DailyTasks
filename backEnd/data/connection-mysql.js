@@ -1,7 +1,7 @@
 const mysql = require("mysql");
 
 
-const HOST =  "database";
+const HOST =  "localhost";
 const USER =  "root";
 const PASSWORD = "rpm0811";
 const PORT = 3306;
