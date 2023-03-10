@@ -2,13 +2,13 @@ require("dotenv").config();
 const mysql = require("mysql");
 
 
-const HOST = process.env.DAILYTASK_DB_HOST || "localhost";
-const USER = process.env.DAILYTASK_DB_USERNAME || "root";
-const PASSWORD = process.env.DAILYTASK_DB_PASSWORD || "rpm0811";
-const PORT = Number(process.env.DAILYTASK_DB_PORT  || 3306);
-const DATABASE = process.env.DAILYTASK_DB_DATABASE || "dailytasks";
-const TIMEZONE = process.env.DAILYTASK_TIMEZONE || "utc";
-const CHARSET = process.env.DAILYTASK_CHARSET || "utf8";
+const HOST = process.env.DAILY_TASKS_DB_HOST || "localhost";
+const USER = process.env.DAILY_TASKS_DB_USER_NAME || "root";
+const PASSWORD = process.env.DAILY_TASKS_DB_PASSWORD || "rpm0811";
+const PORT = Number(process.env.DAILY_TASKS_DB_PORT  || 3306);
+const DATABASE = process.env.DAILY_TASKS_DB_DATABASE || "dailytasks";
+const TIMEZONE = process.env.DAILY_TASKS_DB_TIMEZONE || "utc";
+const CHARSET = process.env.DAILY_TASKS_DB_CHARSET || "utf8";
 
 console.log(HOST, USER, PASSWORD);
 

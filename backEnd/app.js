@@ -5,11 +5,11 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const port = process.env.DAILYTASK_NODE_PORT;
-const host = process.env.DAILYTASK_NODE_HOST;
+const port = process.env.DAILY_TASKS_NODE_PORT;
+const host = process.env.DAILY_TASKS_NODE_HOST;
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false })); 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(Routers);
 
