@@ -21,10 +21,14 @@ class UsuarioController{
         return  res.status(200).send(resultBD);
     }
 
-    teste(req,res) {
+   async teste(req,res) {
         return  res.json({
             mensage: (`Entrei na rota teste, rota apenas para teste`)
            })
+    }
+
+    async jwToken(req,res) {
+        return  resultBD = await UsuarioRepository.jwToken(req.params.id);
     }
 
    async store(req,res) {
@@ -46,6 +50,11 @@ class UsuarioController{
             mensage: (`Entrei na rota delete, rota para deletar o usuário`),
             result: req.body
            })
+    }
+
+    async criptografar(req,res){
+        let dados =  await UsuarioRepository.criptografar(req.body);
+        return  dados;
     }
 
 

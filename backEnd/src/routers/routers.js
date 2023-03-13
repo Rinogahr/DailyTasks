@@ -6,8 +6,9 @@ Routers.get('/user', usuarioConroller.index);
 
 Routers.get('/user/:id', usuarioConroller.show); //http://localhost:3333/user/52 <-id
 
-Routers.get('/user/teste', usuarioConroller.teste);
-Routers.get('/user/rodrigo', usuarioConroller.teste);
+Routers.get('/jwtoken/:id', usuarioConroller.jwToken);
+
+Routers.post('/criptografar/', usuarioConroller.criptografar);
 
 Routers.post('/user/new', usuarioConroller.store);
 
